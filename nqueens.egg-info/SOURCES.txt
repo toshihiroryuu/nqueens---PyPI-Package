@@ -1,0 +1,8 @@
+README.md
+setup.py
+nqueens/__init__.py
+nqueens/code.py
+nqueens.egg-info/PKG-INFO
+nqueens.egg-info/SOURCES.txt
+nqueens.egg-info/dependency_links.txt
+nqueens.egg-info/top_level.txt
