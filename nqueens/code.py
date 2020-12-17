@@ -42,7 +42,7 @@ def display():
     pass
 
 
-# save the n quuens image
+# save the n queens image
 def save(image_stream, name):
     pass
 
@@ -61,7 +61,9 @@ def position_solver(n, pos):
 
 
 # Solve n-queens for an image
-def image_solver():
+def image_solver(n):
+    count, pos = scan_queen(image_name)
+
     if pos.is_empty():
         nqueens_backtrack(n)
     else:
