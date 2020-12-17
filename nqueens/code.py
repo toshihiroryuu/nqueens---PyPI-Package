@@ -43,16 +43,29 @@ def display():
 
 
 # save the n quuens image
-def save():
+def save(image_stream, name):
     pass
 
 
 # Get an image and identify the n-value and position of queens if present.
-def scan_queen():
-    pass
+def scan_queen(image_name):
+    count = 0
+    pos = []
+    return count, pos
+
+# Solve nqueens if queens are present at a position.
+def position_solver(n, pos):
+    count = 0
+    pos = []
+    return count, pos
+
 
 # Solve n-queens for an image
 def image_solver():
+    if pos.is_empty():
+        nqueens_backtrack(n)
+    else:
+        position_solver(n, pos)
     pass
 
 # Return Positions and solution space as audio.
