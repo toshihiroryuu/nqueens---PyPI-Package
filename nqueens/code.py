@@ -69,25 +69,28 @@ def save(queen_data, img_name = "nqueen_solution"):
 
 # Get an image and identify the n-value, no of queens and position of queens if present.
 def scan_queen(image_path):
-    n = 0
-    count = 0
-    pos = []
+    try:
+        n = 0
+        count = 0
+        pos = []
 
-    img = Image.open(image_path).convert('RGB')
-    pixel = img.load()
+        img = Image.open(image_path).convert('RGB')
+        pixel = img.load()
 
-    width = img.size[0]
-    height = img.size[1]
+        width = img.size[0]
+        height = img.size[1]
 
-    white = (255, 255, 255)
+        white = (255, 255, 255)
 
-    for i in range(width - 1):
-        if pixel[i, (height/2)] == white and pixel[i+1, (height/2)] != white:
-            n += 1
+        for i in range(width - 1):
+            if pixel[i, (height/2)] == white and pixel[i+1, (height/2)] != white:
+                n += 1
 
-    print("No of Rows identified is ", n-1)
+        print("No of Rows identified is ", n-1)
 
-    return count, pos, n-1
+        return count, pos, n-1
+    except Exception as ex:
+        print(ex)
 
 # Solve nqueens if queens are present at a position.
 def position_solver(n, pos):
