@@ -2,11 +2,11 @@ import matplotlib.pyplot as plt
 
 
 # Route n-queens based on algorithm selected.
-def queens(n = 4, algo = "divide"):
+def queens(n = 4, algo = "branch"):
 
     print("n-queens",n)
 
-    if algo == "divide":
+    if algo == "branch":
         # get no of solution possible and their position as list
         count, pos = nqueens_branch(n)
     else:
@@ -36,35 +36,42 @@ def show():
 
 # Display the solution as an image
 def display(queen_data):
+    try:
+        fig = plt.figure()
+        ax = fig.add_subplot(1, 1, 1)
 
-    fig = plt.figure()
-    ax = fig.add_subplot(1, 1, 1)
+        table = ax.table(cellText = queen_data, loc='center')
+        table.set_fontsize(14)
+        table.scale(1, 5)
 
-    table = ax.table(cellText = queen_data, loc='center')
-    table.set_fontsize(14)
-    table.scale(1, 5)
-
-    ax.axis('off')
-    plt.show()
+        ax.axis('off')
+        plt.show()
+    except Exception as ex:
+        print(ex)
 
 
 # save the n queens image
 def save(queen_data, img_name = "nqueen_solution"):
-    fig = plt.figure()
-    ax = fig.add_subplot(1,1,1)
+    try:
+        fig = plt.figure()
+        ax = fig.add_subplot(1,1,1)
 
-    table = ax.table(cellText = queen_data, loc='center')
-    table.set_fontsize(14)
-    table.scale(1,5)
+        table = ax.table(cellText = queen_data, loc='center')
+        table.set_fontsize(14)
+        table.scale(1,5)
 
-    ax.axis('off')
-    plt.savefig(img_name)
+        ax.axis('off')
+        plt.savefig(img_name)
+    except Exception as ex:
+        print(ex)
 
-# Get an image and identify the n-value and position of queens if present.
+# Get an image and identify the n-value, no of queens and position of queens if present.
 def scan_queen(image_name):
+    n = 0
     count = 0
     pos = []
-    return count, pos
+
+    return count, pos, n
 
 # Solve nqueens if queens are present at a position.
 def position_solver(n, pos):
@@ -75,13 +82,15 @@ def position_solver(n, pos):
 
 # Solve n-queens for an image
 def image_solver(image_name):
-    count, pos = scan_queen(image_name)
+    try:
+        count, pos, n = scan_queen(image_name)
 
-    if pos.is_empty():
-        nqueens_backtrack(n)
-    else:
-        position_solver(n, pos)
-    pass
+        if pos.is_empty():
+            nqueens_backtrack(n)
+        else:
+            position_solver(n, pos)
+    except Exception as ex:
+        print(ex)
 
 # Return Positions and solution space as audio.
 def alexa():
