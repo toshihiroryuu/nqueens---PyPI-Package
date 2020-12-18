@@ -5,18 +5,27 @@ import matplotlib.pyplot as plt
 # Route n-queens based on algorithm selected.
 def queens(n = 4, algo = "branch"):
 
-    print("n-queens",n)
+    try:
+        count = 0
+        pos = []
+        queen_data = []
 
-    if algo == "branch":
-        # get no of solution possible and their position as list
-        queen_data, count, pos = nqueens_branch(n)
-    else:
-        # get no of solution possible and their position as list
-        queen_data, count, pos = nqueens_backtrack(n)
+        if algo == "branch":
+            # get no of solution possible and their position as list
+            queen_data, count, pos = nqueens_branch(n)
+        else:
+            # get no of solution possible and their position as list
+            queen_data, count, pos = nqueens_backtrack(n)
+
+            return queen_data, count, pos
+
+    except Exception as ex:
+        print(ex)
 
 
 # Use Branch and bound to solve the problem.
 def nqueens_branch(n):
+
     # Set initial count to 0
     count = 0
     pos = []
@@ -41,6 +50,7 @@ def show():
 
 # Display the solution as an image
 def display(queen_data):
+
     try:
         fig = plt.figure()
         ax = fig.add_subplot(1, 1, 1)
@@ -58,6 +68,7 @@ def display(queen_data):
 
 # save the n queens image
 def save(queen_data, img_name = "nqueen_solution"):
+
     try:
         fig = plt.figure()
         ax = fig.add_subplot(1,1,1)
@@ -74,6 +85,7 @@ def save(queen_data, img_name = "nqueen_solution"):
 
 # Get an image and identify the n-value, no of queens and position of queens if present.
 def scan_queen(image_path):
+
     try:
         n = 0
         count = 0
@@ -106,6 +118,7 @@ def position_solver(n, pos):
 
 # Solve n-queens for an image
 def image_solver(image_path):
+
     try:
         count, pos, n = scan_queen(image_path)
 
