@@ -108,6 +108,7 @@ def scan_queen(image_path):
         print("No of Rows identified is ", n-1)
 
         return count, pos, n-1
+
     except Exception as ex:
         print(ex)
 
@@ -128,27 +129,32 @@ def image_solver(image_path):
             nqueens_backtrack(n)
         else:
             position_solver(n, pos)
+
     except Exception as ex:
         print(ex)
 
 # Return Positions and solution space as audio.
 def alexa(n, count, pos, language = "en", speed = "fast", save = True):
 
-    tt1 = str(n)+"Queens Problem"
-    tt2 = str(count) + "Solutions Possible"
-    tt3 = "Queens are present at positions" + str(pos)
+    try:
+        tt1 = str(n)+"Queens Problem"
+        tt2 = str(count) + "Solutions Possible"
+        tt3 = "Queens are present at positions" + str(pos)
 
-    textt = tt1 + tt2 + tt3
+        textt = tt1 + tt2 + tt3
 
-    bool = False
-    if speed == "slow":
-        bool = True
+        bool = False
+        if speed == "slow":
+            bool = True
 
-    out = gTTS(text = textt, lang = language, slow = bool)
+        out = gTTS(text = textt, lang = language, slow = bool)
 
-    out.save("nqueen.mp3")
-    os.system("start nqueen.mp3")
+        out.save("nqueen.mp3")
+        os.system("start nqueen.mp3")
 
-    # Need to add mp3 remove option
-    if save:
-        print("Audio file saved as nqueens.mp3")
+        # Need to add mp3 remove option
+        if save:
+            print("Audio file saved as nqueens.mp3")
+
+    except Exception as ex:
+        print(ex)
