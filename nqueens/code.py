@@ -28,6 +28,7 @@ def nqueens_backtrack(n):
     count = 0
     # ist to hold queen positions
     pos = []
+    print("N=", n, "in backtrack")
     return count, pos
 
 # Print the possible soultions as 0,1 on board
@@ -100,7 +101,7 @@ def image_solver(image_path):
     try:
         count, pos, n = scan_queen(image_path)
 
-        if pos.is_empty():
+        if len(pos) == 0 :
             nqueens_backtrack(n)
         else:
             position_solver(n, pos)
