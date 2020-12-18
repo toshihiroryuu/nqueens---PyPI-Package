@@ -1,3 +1,4 @@
+from PIL import Image
 import matplotlib.pyplot as plt
 
 
@@ -71,7 +72,21 @@ def scan_queen(image_name):
     count = 0
     pos = []
 
-    return count, pos, n
+    img = Image.open(image_name).convert('RGB')
+    pixel = img.load()
+
+    width = img.size[0]
+    height = img.size[1]
+
+    white = (255, 255, 255)
+
+    for i in range(width - 1):
+        if pixel[i, (height/2)] == white and pixel[i+1, (height/2)] != white:
+            n += 1
+
+    print("No of Rows identified is ", n-1)
+
+    return count, pos, n-1
 
 # Solve nqueens if queens are present at a position.
 def position_solver(n, pos):
