@@ -6,4 +6,5 @@ nqueens/test.py
 nqueens.egg-info/PKG-INFO
 nqueens.egg-info/SOURCES.txt
 nqueens.egg-info/dependency_links.txt
+nqueens.egg-info/requires.txt
 nqueens.egg-info/top_level.txt

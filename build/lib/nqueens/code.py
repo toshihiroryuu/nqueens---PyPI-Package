@@ -1,3 +1,4 @@
+import os
 import math
 import copy
 import numpy as np
@@ -38,7 +39,9 @@ class Queen:
             print("No of solutions possible = ", self.count)
 
             print("Solution space = ", self.queen_data)
-            print("Position of Queens = ", self.pos)
+
+            if self.count != 0:
+                print("Position of Queens = ", self.pos)
 
         except Exception as ex:
             print(ex)
