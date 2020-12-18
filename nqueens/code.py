@@ -28,7 +28,7 @@ def nqueens_backtrack(n):
     count = 0
     # ist to hold queen positions
     pos = []
-    print("N=", n, "in backtrack")
+    print("N =", n, "in backtrack")
     return count, pos
 
 # Print the possible soultions as 0,1 on board
