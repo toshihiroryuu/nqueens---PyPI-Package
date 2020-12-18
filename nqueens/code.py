@@ -143,8 +143,6 @@ def alexa(n, count, pos, language = "en", speed = "fast", save = True):
     bool = False
     if speed == "slow":
         bool = True
-    else:
-        bool == False
 
     out = gTTS(text = textt, lang = language, slow = bool)
 
