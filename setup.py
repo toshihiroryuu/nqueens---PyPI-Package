@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="nqueens", # Replace with your own username
-    version="0.0.1",
+    version="1.0.0",
     author="Athul Mathew Konoor",
     author_email="athulmathewkonoor@gmail.com",
     description="A package to get nqueens.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/toshihiroryuu/",
+    url="https://github.com/toshihiroryuu/nqueens---PyPI-Package",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

@@ -1,12 +1,12 @@
 Metadata-Version: 2.1
 Name: nqueens
-Version: 0.0.1
+Version: 1.0.0
 Summary: A package to get nqueens.
-Home-page: https://github.com/toshihiroryuu/
+Home-page: https://github.com/toshihiroryuu/nqueens---PyPI-Package
 Author: Athul Mathew Konoor
 Author-email: athulmathewkonoor@gmail.com
 License: UNKNOWN
-Description: UNKNOWN
+Description: ## Description will be added soon. Wait for it.
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
