@@ -3,25 +3,26 @@ from code import *
 
 # Test code
 
-queens(4, )
+qq = Queen(5, "backtrack")
+qq.pprint()
 
-# queen_data=[[0,1,0,0],
-#             [0,0,0,1],
-#             [1,0,0,0],
-#             [0,0,1,0]]
+qq = Queen(algo = "backtrack")
+qq.pprint()
 
-# display(queen_data)
-# save(queen_data, "saved_image")
-# save(queen_data)
+qq = Queen(algo = "backtrack")
+qq.scan_queen("q4.png")
+qq.pprint()
 
-# image_solver("tests\q4.PNG")
-# image_solver("tests\q4b.PNG")
-# image_solver("tests\q5.PNG")
-# image_solver("tests\q5b.PNG")
-# image_solver("tests\q6.PNG")
+qq = Queen(algo = "backtrack")
+qq.scan_queen("q4.png")
+qq.pprint()
+qq.alexa()
 
-n = 4
-count = 2
-pos = [(1, 2), (2,4), (3, 1), (4, 3)]
+qq = Queen(algo = "backtrack")
+qq.scan_queen("q6.png")
+qq.pprint()
+qq.display()
 
-alexa(n, count, pos)
+qq = Queen(algo = "backtrack")
+qq.scan_queen("q6.png")
+qq.save()
