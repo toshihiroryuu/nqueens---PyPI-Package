@@ -19,3 +19,9 @@ queens(4, )
 # image_solver("tests\q5.PNG")
 # image_solver("tests\q5b.PNG")
 # image_solver("tests\q6.PNG")
+
+n = 4
+count = 2
+pos = [(1, 2), (2,4), (3, 1), (4, 3)]
+
+alexa(n, count, pos)
