@@ -86,16 +86,3 @@ def image_solver(image_name):
 # Return Positions and solution space as audio.
 def alexa():
     pass
-
-
-# Test code
-queens(4, )
-
-queen_data=[
-    [0,1,0,0],
-    [0,0,0,1],
-    [1,0,0,0],
-    [0,0,1,0]]
-
-display(queen_data)
-save(queen_data, "amk")
