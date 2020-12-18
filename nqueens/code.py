@@ -132,7 +132,7 @@ def image_solver(image_path):
         print(ex)
 
 # Return Positions and solution space as audio.
-def alexa(n, count, pos, language = "en", speed = "fast", save = False):
+def alexa(n, count, pos, language = "en", speed = "fast", save = True):
 
     tt1 = str(n)+"Queens Problem"
     tt2 = str(count) + "Solutions Possible"
@@ -151,5 +151,6 @@ def alexa(n, count, pos, language = "en", speed = "fast", save = False):
     out.save("nqueen.mp3")
     os.system("start nqueen.mp3")
 
+    # Need to add mp3 remove option
     if save:
         print("Audio file saved as nqueens.mp3")
