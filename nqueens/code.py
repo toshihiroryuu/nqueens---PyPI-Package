@@ -9,10 +9,10 @@ def queens(n = 4, algo = "branch"):
 
     if algo == "branch":
         # get no of solution possible and their position as list
-        count, pos = nqueens_branch(n)
+        queen_data, count, pos = nqueens_branch(n)
     else:
         # get no of solution possible and their position as list
-        count, pos = nqueens_backtrack(n)
+        queen_data, count, pos = nqueens_backtrack(n)
 
 
 # Use Branch and bound to solve the problem.
@@ -20,16 +20,19 @@ def nqueens_branch(n):
     # Set initial count to 0
     count = 0
     pos = []
-    return count, pos
+    queen_data = []
+    return queen_data, count, pos
 
 
 # Use Backtracking to solve the problem.
 def nqueens_backtrack(n):
+
+    # list to hold queen positions
     count = 0
-    # ist to hold queen positions
     pos = []
+    queen_data = []
     print("N =", n, "in backtrack")
-    return count, pos
+    return queen_data, count, pos
 
 # Print the possible soultions as 0,1 on board
 def show():
@@ -48,6 +51,7 @@ def display(queen_data):
 
         ax.axis('off')
         plt.show()
+
     except Exception as ex:
         print(ex)
 
@@ -64,6 +68,7 @@ def save(queen_data, img_name = "nqueen_solution"):
 
         ax.axis('off')
         plt.savefig(img_name)
+
     except Exception as ex:
         print(ex)
 
