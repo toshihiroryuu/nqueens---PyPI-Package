@@ -1,3 +1,5 @@
+import os
+from gtts import gTTS
 from PIL import Image
 import matplotlib.pyplot as plt
 
@@ -130,5 +132,24 @@ def image_solver(image_path):
         print(ex)
 
 # Return Positions and solution space as audio.
-def alexa():
-    pass
+def alexa(n, count, pos, language = "en", speed = "fast", save = False):
+
+    tt1 = str(n)+"Queens Problem"
+    tt2 = str(count) + "Solutions Possible"
+    tt3 = "Queens are present at positions" + str(pos)
+
+    textt = tt1 + tt2 + tt3
+
+    bool = False
+    if speed == "slow":
+        bool = True
+    else:
+        bool == False
+
+    out = gTTS(text = textt, lang = language, slow = bool)
+
+    out.save("nqueen.mp3")
+    os.system("start nqueen.mp3")
+
+    if save:
+        print("Audio file saved as nqueens.mp3")
