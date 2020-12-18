@@ -1,160 +1,204 @@
-import os
+import math
+import copy
+import numpy as np
 from gtts import gTTS
 from PIL import Image
 import matplotlib.pyplot as plt
 
+class Queen:
 
-# Route n-queens based on algorithm selected.
-def queens(n = 4, algo = "branch"):
+    def __init__(self, n = 0, algo = "branch", pos = []):
+        self.n = n
+        self.algo = algo
+        self.pos = []
 
-    try:
-        count = 0
-        pos = []
-        queen_data = []
+        self.count = 0
+        self.queen_data = []
 
-        if algo == "branch":
-            # get no of solution possible and their position as list
-            queen_data, count, pos = nqueens_branch(n)
-        else:
-            # get no of solution possible and their position as list
-            queen_data, count, pos = nqueens_backtrack(n)
+        if n > 0:
+            self.router()
 
-            return queen_data, count, pos
+    # Route n-queens based on algorithm selected.
+    def router(self):
 
-    except Exception as ex:
-        print(ex)
+        try:
+            if self.algo == "branch":
+                # get no of solution possible and their position as list
+                self.nqueens_branch()
+            else:
+                # get no of solution possible and their position as list
+                self.nqueens_backtrack()
 
+        except Exception as ex:
+            print(ex)
 
-# Use Branch and bound to solve the problem.
-def nqueens_branch(n):
+    def pprint(self):
+        try:
+            print("N = ", self.n)
+            print("No of solutions possible = ", self.count)
 
-    # Set initial count to 0
-    count = 0
-    pos = []
-    queen_data = []
-    return queen_data, count, pos
+            print("Solution space = ", self.queen_data)
+            print("Position of Queens = ", self.pos)
 
+        except Exception as ex:
+            print(ex)
 
-# Use Backtracking to solve the problem.
-def nqueens_backtrack(n):
+    def nqueens_backtrack(self):
 
-    # list to hold queen positions
-    count = 0
-    pos = []
-    queen_data = []
-    print("N =", n, "in backtrack")
-    return queen_data, count, pos
+        try:
+            board = []
 
-# Print the possible soultions as 0,1 on board
-def show():
-    pass
+            for i in range(self.n):
+                roww = []
+                for j in range(self.n):
+                    roww.append(0)
+                board.append(roww)
 
+            rowmask = 0
+            ldmask = 0
+            rdmask = 0
+            row = 0
 
-# Display the solution as an image
-def display(queen_data):
+            self.solve_board(board, row, rowmask, ldmask, rdmask)
 
-    try:
-        fig = plt.figure()
-        ax = fig.add_subplot(1, 1, 1)
+        except Exception as ex:
+            print(ex)
 
-        table = ax.table(cellText = queen_data, loc='center')
-        table.set_fontsize(14)
-        table.scale(1, 5)
+    def solve_board(self, board, row, rowmask,ldmask, rdmask):
 
-        ax.axis('off')
-        plt.show()
+        try:
+            all_rows_filled = (1 << self.n) - 1
 
-    except Exception as ex:
-        print(ex)
+            if (rowmask == all_rows_filled):
+                self.count = self.count + 1
+                self.queen_data.append(copy.deepcopy(board))
 
+            safe = all_rows_filled & (~(rowmask | ldmask | rdmask))
 
-# save the n queens image
-def save(queen_data, img_name = "nqueen_solution"):
+            while (safe > 0):
 
-    try:
-        fig = plt.figure()
-        ax = fig.add_subplot(1,1,1)
+                p = safe & (-safe)
+                col = (int)(math.log(p)/math.log(2))
+                board[row][col] = 1
+                self.pos.append([row, col])
 
-        table = ax.table(cellText = queen_data, loc='center')
-        table.set_fontsize(14)
-        table.scale(1,5)
+                self.solve_board(board, row+1, rowmask|p, (ldmask|p) << 1, (rdmask|p) >> 1)
 
-        ax.axis('off')
-        plt.savefig(img_name)
+                safe = safe & (safe-1)
 
-    except Exception as ex:
-        print(ex)
+                board[row][col] = 0
 
-# Get an image and identify the n-value, no of queens and position of queens if present.
-def scan_queen(image_path):
-
-    try:
-        n = 0
-        count = 0
-        pos = []
-
-        img = Image.open(image_path).convert('RGB')
-        pixel = img.load()
-
-        width = img.size[0]
-        height = img.size[1]
-
-        white = (255, 255, 255)
-
-        for i in range(width - 1):
-            if pixel[i, (height/2)] == white and pixel[i+1, (height/2)] != white:
-                n += 1
-
-        print("No of Rows identified is ", n-1)
-
-        return count, pos, n-1
-
-    except Exception as ex:
-        print(ex)
-
-# Solve nqueens if queens are present at a position.
-def position_solver(n, pos):
-    count = 0
-    pos = []
-    return count, pos
+        except Exception as ex:
+            print(ex)
 
 
-# Solve n-queens for an image
-def image_solver(image_path):
+    def nqueens_branch(self):
+        pass
 
-    try:
-        count, pos, n = scan_queen(image_path)
+    # Display the solution as an image
+    def display(self):
 
-        if len(pos) == 0 :
-            nqueens_backtrack(n)
-        else:
-            position_solver(n, pos)
+        try :
+            rows, cols = len(self.queen_data), len(self.queen_data[0])
+            print("No of Solutions ", rows)
 
-    except Exception as ex:
-        print(ex)
+            for i in range(rows):
+                print("=========================================")
+                print("Solution : ", i+1)
+                fig = plt.figure()
+                ax = fig.add_subplot(1, 1, 1)
 
-# Return Positions and solution space as audio.
-def alexa(n, count, pos, language = "en", speed = "fast", save = True):
+                table = ax.table(cellText = self.queen_data[i], loc='center')
+                table.set_fontsize(14)
+                table.scale(1, 5)
 
-    try:
-        tt1 = str(n)+"Queens Problem"
-        tt2 = str(count) + "Solutions Possible"
-        tt3 = "Queens are present at positions" + str(pos)
+                ax.axis('off')
+                plt.show()
+                print("=========================================")
 
-        textt = tt1 + tt2 + tt3
+        except Exception as ex:
+            print(ex)
 
-        bool = False
-        if speed == "slow":
-            bool = True
 
-        out = gTTS(text = textt, lang = language, slow = bool)
+    # save the n queens image
+    def save(self):
 
-        out.save("nqueen.mp3")
-        os.system("start nqueen.mp3")
+        try:
+            img_name = "nqueen_solution"
 
-        # Need to add mp3 remove option
-        if save:
-            print("Audio file saved as nqueens.mp3")
+            rows, cols = len(self.queen_data), len(self.queen_data[0])
+            print("No of Solutions ", rows)
 
-    except Exception as ex:
-        print(ex)
+            for i in range(rows):
+                print("Solution : ", i+1, " - Saved as " + img_name + "_" + str(i+1) + ".png")
+                fig = plt.figure()
+                ax = fig.add_subplot(1, 1, 1)
+
+                table = ax.table(cellText = self.queen_data[i], loc='center')
+                table.set_fontsize(14)
+                table.scale(1, 5)
+
+                ax.axis('off')
+
+                plt.savefig(img_name + "_" + str(i+1))
+
+        except Exception as ex:
+            print(ex)
+
+    # Get an image and identify the n-value, no of queens and position of queens if present.
+    def scan_queen(self, image_path):
+
+        try:
+            img = Image.open(image_path).convert('RGB')
+            pixel = img.load()
+
+            width = img.size[0]
+            height = img.size[1]
+
+            white = (255, 255, 255)
+
+            for i in range(width - 1):
+                if pixel[i, (height/2)] == white and pixel[i+1, (height/2)] != white:
+                    self.n += 1
+
+            self.n = self.n-1
+
+            print("No of Rows identified is ", self.n)
+
+            if self.n > 0:
+                self.router()
+
+        except Exception as ex:
+            print(ex)
+
+    # Return Positions and solution space as audio.
+    def alexa(self, language = "en", speed = "fast", save = True):
+
+        try:
+            tt1 = str(self.n)+"Queens Problem "
+            tt2 = str(self.count) + "Solutions Possible"
+
+
+            pos_text = " "
+            for i, pair in enumerate(self.pos):
+                pos_text = pos_text + "Pair" + str(i+1) + str(pair)
+
+            tt3 = "Queens are present at positions " + pos_text
+
+            textt = tt1 + tt2 + tt3
+
+            bool = False
+            if speed == "slow":
+                bool = True
+
+            out = gTTS(text = textt, lang = language, slow = bool)
+
+            out.save("nqueen.mp3")
+            os.system("start nqueen.mp3")
+
+            # Need to add mp3 remove option
+            if save:
+                print("Audio file saved as nqueens.mp3")
+
+        except Exception as ex:
+            print(ex)
