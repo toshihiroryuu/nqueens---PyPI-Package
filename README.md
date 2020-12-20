@@ -11,49 +11,32 @@ Install the package for finding N-Queen Solutions.
 
 Import classes from the package.
  <dl><code><b>from nqueens import *</b></code></dl>
-
-1. <b>Inputs : Number of Queens , type of algorithm used</b>
+ 
+1.<b>N Queens Solutions Inputs : Number of Queens , Type of algorithm used</b>
     <dl><code><b>qq = Queen(5,algo = "backtrack")</b></code></dl>
     <dl><code><b>qq.pprint()</b></code> </dl>
                  
-2. To know the No of solutions, Solution space and the Positions of the queen without mentioning the input value. Input is algorithm used.
+2. <b>N Queens Solutions Input : Type of algorithm used</b>
     <dl><code><b>qq = Queen(algo = "backtrack")</b></code></dl>
     <dl><code><b>qq.pprint()</b></code></dl>
     
-3. To know the No of solutions, Solution space and the Positions of the queen by scaning a picture that have fixed rows and columns. Input is type of algorithm used and an image 
-   which has table with rows and columns as in chess board.
-     <dl><code><b>qq = Queen(algo = "backtrack")</b></code></dl>
+3. <b>N Queens Solution when input is image (Blank table with rows and columns as in chess board).</b>
+     <dl><code><b>qq = Queen(4, algo = "backtrack")</b></code></dl>
      <dl><code><b>qq.scan_queen("q5.PNG")</b></code></dl>
-     <dl><code><b>qq.pprint()</b></code></dl>
 
-4. To Get voice output of the No of solutions, Solution space and the Positions of the queen by scaning a picture that have fixed rows and columns. Input is type of algorithm 
-   used and an image which has table with rows and columns as in chess board.
-     <dl><code><b>qq = Queen(algo = "backtrack")</b></code></dl>
-     <dl><code><b>qq.scan_queen("q4.png")</b></code></dl>
-     <dl><code><b>qq.pprint()</b></code></dl>
+4. <b>N Queens Solution as Voice output </b> 
+     <dl><code><b>qq = Queen(4, algo = "backtrack")</b></code></dl>
      <dl><code><b>qq.alexa()</b></code></dl>
      
-5. To Display output as a nxn Table form, No of solutions, Solution space and the Positions of the queen. Input is type of algorithm used and an image which has table with rows
-   and columns as in chess board.
-     <dl><code><b>qq = Queen(algo = "backtrack")</b></code></dl>
-     <dl><code><b>qq.scan_queen("q4.png")</b></code></dl>
-     <dl><code><b>qq.pprint()</b></code></dl>
+5. <b>N Queens Solution as Table output </b>
+     <dl><code><b>qq = Queen(4, algo = "backtrack")</b></code></dl>
      <dl><code><b>qq.display()</b></code></dl>
      
-6. To Display output as a nxn Table form, No of solutions, Solution space and the Positions of the queen. Input is type of algorithm used and an image which has table with rows
-   and columns as in chess board.
-     <dl><code><b>qq = Queen(algo = "backtrack")</b></code></dl>
-     <dl><code><b>qq.scan_queen("q4.png")</b></code></dl>
-     <dl><code><b>qq.pprint()</b></code></dl>
-     <dl><code><b>qq.display()</b></code></dl>
-     
-7. To Get output and locally save the nxn Table form as an image, No of solutions, Solution space and the Positions of the queen. Input is type of algorithm used and an image
-   which has table with rows and columns as in chess board.
-     <dl><code><b>qq = Queen(algo = "backtrack")</b></code></dl>
-     <dl><code><b>qq.scan_queen("q4.png")</b></code></dl>
-     <dl><code><b>qq.pprint()</b></code></dl>
-     <dl><code><b>qq.display()</b></code></dl>
+6. <b>N Queens Solution as PNG File output </b>
+     <dl><code><b>qq = Queen(4, algo = "backtrack")</b></code></dl>
+     <dl><code><b>qq.save()</b></code></dl>
      
      
-<dl>Special Credits: https://github.com/garthur </dl>
-<dl>References: https://www.geeksforgeeks.org/n-queen-problem-backtracking </dl>
+     
+<dl>Special Credits: https://python-packaging-tutorial.readthedocs.io/en/latest/setup_py.html </dl>
+<dl>References: https://www.geeksforgeeks.org/printing-solutions-n-queen-problem/ </dl>
