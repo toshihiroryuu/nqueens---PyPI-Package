@@ -18,7 +18,7 @@ The expected output for this problem is a binary array which has 1s for the bloc
 We have implemented N-Queens problem as a python package. 
 
 So you need to install the package for finding out the solutions. 
-
+Use Command : <mark>pip install nqueens</mark>
 
 
 
