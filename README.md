@@ -59,5 +59,5 @@ Now we able to use all the fuctionalities of the package:
      <dl><code><b>qq.display()</b></code></dl>
      
      
-Special Credits: https://github.com/garthur 
-References: https://www.geeksforgeeks.org/n-queen-problem-backtracking
+<dl>Special Credits: https://github.com/garthur </dl>
+<dl>References: https://www.geeksforgeeks.org/n-queen-problem-backtracking </dl>
