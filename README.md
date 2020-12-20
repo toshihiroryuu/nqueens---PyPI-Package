@@ -11,17 +11,16 @@ Install the package for finding N-Queen Solutions.
 
 Import classes from the package.
  <dl><code><b>from nqueens import *</b></code></dl>
- 
-1. <b>N Queens Solutions 
-      Inputs : Number of Queens , Type of algorithm used</b>
+  
+1. <b>N Queens Solutions </b>
     <dl><code><b>qq = Queen(5,algo = "backtrack")</b></code></dl>
     <dl><code><b>qq.pprint()</b></code> </dl>
                  
-2. <b>N Queens Solutions Input : Type of algorithm used</b>
+2. <b>N Queens Solutions when input is type of algorithm used</b>
     <dl><code><b>qq = Queen(algo = "backtrack")</b></code></dl>
     <dl><code><b>qq.pprint()</b></code></dl>
     
-3. <b>N Queens Solution when input is image (Blank table with rows and columns as in chess board).</b>
+3. <b>N Queens Solution when input is an image (Blank table with rows and columns as in chess board).</b>
      <dl><code><b>qq = Queen(4, algo = "backtrack")</b></code></dl>
      <dl><code><b>qq.scan_queen("q5.PNG")</b></code></dl>
 
