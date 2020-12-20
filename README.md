@@ -13,6 +13,12 @@ this row and column as part of the solution. If we do not find such a row due to
 
 The expected output for this problem is a binary array which has 1s for the blocks where queens are placed, and 0s for the blocks where queens are not placed.
 
+# Implementation
+
+We have implemented N-Queens problem as a python package. 
+
+So you need to install the package for finding out the solutions. 
+
 
 
 
