@@ -1,6 +1,6 @@
 # N-Queen Problem
 
-The N-Queens Problem is placing of N-Queens in a N * N chessboard in such a way that no queens attack each other. Queens attack each other when not more than one queen can be placed in same row or column or left daigonal or right diagonal. 
+The N-Queens Problem is placing of N-Queens in a N * N chessboard in such a way that no queens attack each other. Queens attack each other when not more than one queen can be placed in same row or column or left daigonal or right diagonal. Backtracking algorithm is used here.
 
 The expected output for this problem is a binary array which has 1s for the cells where queens are placed, and 0s for the blocks where queens are not placed.
 
