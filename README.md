@@ -33,4 +33,31 @@ Now we able to use all the fuctionalities of the package:
     <code><b>qq = Queen(2,algo = "backtrack")</b></code>
     <code><b>qq.pprint()</b></code>
     
+3. To know the No of solutions, Solution space and the Positions of the queen by scaning a picture that have fixed rows and columns.
+     <code><b>qq = Queen(algo = "backtrack")</b></code>
+     <code><b>qq.scan_queen("q5.PNG")</b></code>
+     <code><b>qq.pprint()</b></code>
 
+4. To Get voice output of the No of solutions, Solution space and the Positions of the queen by scaning a picture that have fixed rows and columns.
+     <code><b>qq = Queen(algo = "backtrack")</b></code>
+     <code><b>qq.scan_queen("q4.png")</b></code>
+     <code><b>qq.pprint()</b></code>
+     <code><b>qq.alexa()</b></code>
+     
+5. To Display output as a nxn Table form, No of solutions, Solution space and the Positions of the queen.
+     <code><b>qq = Queen(algo = "backtrack")</b></code>.
+     <code><b>qq.scan_queen("q4.png")</b></code>
+     <code><b>qq.pprint()</b></code>
+     <code><b>qq.display()</b></code>
+     
+6. To Display output as a nxn Table form, No of solutions, Solution space and the Positions of the queen.
+     <code><b>qq = Queen(algo = "backtrack")</b></code>
+     <code><b>qq.scan_queen("q4.png")</b></code>
+     <code><b>qq.pprint()</b></code>
+     <code><b>qq.display()</b></code>
+     
+7. To Get output and save the nxn Table form as an image, No of solutions, Solution space and the Positions of the queen.
+     <code><b>qq = Queen(algo = "backtrack")</b></code>
+     <code><b>qq.scan_queen("q4.png")</b></code>
+     <code><b>qq.pprint()</b></code>
+     <code><b>qq.display()</b></code>
