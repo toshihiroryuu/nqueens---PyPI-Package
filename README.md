@@ -20,5 +20,13 @@ We have implemented N-Queens problem as a python package.
 So you need to install the package for finding out the solutions. 
 Use Command : <code><b>pip install nqueens</b></code>
 
+After Installing the python package import all from the nqueens package.
+Use Command : <code><b>from nqueens import *</b></code>
+
+Now we able to use all the fuctionalities of the package:
+
+1. To know the No of solutions, Solution space and the Position of the queen
+   Use Command : <code><b>qq = Queen(5, "backtrack")</b></code>
+                 <code><b>qq.pprint()</b></code> 
 
 
