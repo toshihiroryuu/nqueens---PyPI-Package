@@ -18,10 +18,10 @@ The expected output for this problem is a binary array which has 1s for the bloc
 We have implemented N-Queens problem as a python package. 
 
 So you need to install the package for finding out the solutions. 
-Use Command : <code><b>pip install nqueens</b></code>
+ <dl><code><b>pip install nqueens</b></code></dl>
 
 After Installing the python package import all from the nqueens package.
-Use Command : <code><b>from nqueens import *</b></code>
+ <dl><code><b>from nqueens import *</b></code></dl>
 
 Now we able to use all the fuctionalities of the package:
 
@@ -30,34 +30,34 @@ Now we able to use all the fuctionalities of the package:
     <code><b>qq.pprint()</b></code> </dl>
                  
 2. To know the No of solutions, Solution space and the Positions of the queen without mentioning the input value.
-    <code><b>qq = Queen(2,algo = "backtrack")</b></code>
-    <code><b>qq.pprint()</b></code>
+    <dl><code><b>qq = Queen(2,algo = "backtrack")</b></code>
+    <code><b>qq.pprint()</b></code></dl>
     
 3. To know the No of solutions, Solution space and the Positions of the queen by scaning a picture that have fixed rows and columns.
-     <code><b>qq = Queen(algo = "backtrack")</b></code>
+     <dl><code><b>qq = Queen(algo = "backtrack")</b></code>
      <code><b>qq.scan_queen("q5.PNG")</b></code>
-     <code><b>qq.pprint()</b></code>
+     <code><b>qq.pprint()</b></code></dl>
 
 4. To Get voice output of the No of solutions, Solution space and the Positions of the queen by scaning a picture that have fixed rows and columns.
-     <code><b>qq = Queen(algo = "backtrack")</b></code>
+     <dl><code><b>qq = Queen(algo = "backtrack")</b></code>
      <code><b>qq.scan_queen("q4.png")</b></code>
      <code><b>qq.pprint()</b></code>
-     <code><b>qq.alexa()</b></code>
+     <code><b>qq.alexa()</b></code></dl>
      
 5. To Display output as a nxn Table form, No of solutions, Solution space and the Positions of the queen.
-     <code><b>qq = Queen(algo = "backtrack")</b></code>.
+     <dl><code><b>qq = Queen(algo = "backtrack")</b></code>.
      <code><b>qq.scan_queen("q4.png")</b></code>
      <code><b>qq.pprint()</b></code>
-     <code><b>qq.display()</b></code>
+     <code><b>qq.display()</b></code></dl>
      
 6. To Display output as a nxn Table form, No of solutions, Solution space and the Positions of the queen.
-     <code><b>qq = Queen(algo = "backtrack")</b></code>
+     <dl><code><b>qq = Queen(algo = "backtrack")</b></code>
      <code><b>qq.scan_queen("q4.png")</b></code>
      <code><b>qq.pprint()</b></code>
-     <code><b>qq.display()</b></code>
+     <code><b>qq.display()</b></code></dl>
      
 7. To Get output and save the nxn Table form as an image, No of solutions, Solution space and the Positions of the queen.
-     <code><b>qq = Queen(algo = "backtrack")</b></code>
+     <dl><code><b>qq = Queen(algo = "backtrack")</b></code>
      <code><b>qq.scan_queen("q4.png")</b></code>
      <code><b>qq.pprint()</b></code>
-     <code><b>qq.display()</b></code>
+     <code><b>qq.display()</b></code></dl>
