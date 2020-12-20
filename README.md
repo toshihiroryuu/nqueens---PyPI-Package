@@ -12,7 +12,7 @@ Install the package for finding N-Queen Solutions.
 Import classes from the package.
  <dl><code><b>from nqueens import *</b></code></dl>
  
-1.<b>N Queens Solutions Inputs : Number of Queens , Type of algorithm used</b>
+1. <b>N Queens Solutions Inputs : Number of Queens , Type of algorithm used</b>
     <dl><code><b>qq = Queen(5,algo = "backtrack")</b></code></dl>
     <dl><code><b>qq.pprint()</b></code> </dl>
                  
