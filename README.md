@@ -26,8 +26,8 @@ Use Command : <code><b>from nqueens import *</b></code>
 Now we able to use all the fuctionalities of the package:
 
 1. To know the No of solutions, Solution space and the Position of the queen.
-   Use Command : <code><b>qq = Queen(5,algo = "backtrack")</b></code>
-                 <code><b>qq.pprint()</b></code> 
+    <dl><code><b>qq = Queen(5,algo = "backtrack")</b></code>
+    <code><b>qq.pprint()</b></code> </dl>
                  
 2. To know the No of solutions, Solution space and the Positions of the queen without mentioning the input value.
     <code><b>qq = Queen(2,algo = "backtrack")</b></code>
