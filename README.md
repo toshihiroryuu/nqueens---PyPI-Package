@@ -38,10 +38,10 @@ class Queen:
    ```
 
 <b>NQueens Solution space as Voice output </b>
-    ```
+  ```
     qq = Queen(4)
     qq.alexa()
-    ```
+   ```
 
 <b>NQueens Solution space as image output </b>
    
