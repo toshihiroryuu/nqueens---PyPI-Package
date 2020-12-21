@@ -23,14 +23,14 @@ To Install this package. Use :
 <dl><code><b>from nqueens import *</b></code></dl>
 
 <b>NQueens Possible Solution Space </b>
-   <dl><code><b>qq = Queen(5)</b></code></dl>
-   <dl><code><b>qq.pprint()</b></code> </dl>
+   <dl><code><b>qq = Queen(5)</dl>
+   <dl>qq.pprint()</b></code> </dl>
     
 <b>Use scan_queen() class function to solve NQueens problem with image input.</b>
 
    ![image](https://github.com/toshihiroryuu/nqueens---PyPI-Package/blob/main/tests/q4b.PNG)
-   <dl><code><b>qq = Queen(4, algo = "backtrack")</b></code></dl>
-   <dl><code><b>qq.scan_queen("q5.PNG")</b></code></dl>
+   <dl><code><b>qq = Queen(4, algo = "backtrack")</dl>
+   <dl>qq.scan_queen("q5.PNG")</b></code></dl>
 
 <b>NQueens Solution space as Voice output </b>
     <dl><code><b>qq = Queen(4)</b></code></dl>
