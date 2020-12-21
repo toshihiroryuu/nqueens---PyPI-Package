@@ -23,7 +23,8 @@ class Queen:
 ```
 
 <b>NQueens Possible Solution Space </b>
-   ```qq = Queen(5)
+   ```
+   qq = Queen(5)
    qq.pprint()
    ```
     
@@ -42,12 +43,14 @@ class Queen:
     ```
 
 <b>NQueens Solution space as image output </b>
-    ```
+   
+   ```
     qq = Queen(4, algo = "backtrack")
     qq.display()
     ```
 
 <b>NQueens Solution space as PNG File output </b>
+    
     ```
     qq = Queen(4)
     qq.save()
