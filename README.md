@@ -8,7 +8,8 @@ To Install this package. Use :
 
 # Class Definition
 
-<dl>```class Queen:
+<dl><code>
+      ```class Queen:
 
      def __init__(self, n = 0, algo = "backtrack", pos = []):
           self.n = int(n)
@@ -16,7 +17,7 @@ To Install this package. Use :
           self.pos = []
 
           self.count = 0
-          self.queen_data = []```</dl?
+          self.queen_data = []```</code></dl?
 
 Use the below snippit to start using the package.
 <dl><code><b>from nqueens import *</b></code></dl>
