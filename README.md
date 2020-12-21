@@ -19,31 +19,35 @@ To Install this package. Use :
           self.queen_data = []
 ```
 
-# Use the below snippit to start using the package.
+<b>Use the below snippit to start using the package.</b>
 ```from nqueens import * ```
 
 <b>NQueens Possible Solution Space </b>
-   <dl><code><b>qq = Queen(5)</dl>
+   ```<dl><code><b>qq = Queen(5)</dl>
    <dl>qq.pprint()</b></code> </dl>
+   ```
     
 <b>Use scan_queen() class function to solve NQueens problem with image input.</b>
 
    ![image](https://github.com/toshihiroryuu/nqueens---PyPI-Package/blob/main/tests/q4b.PNG)
-   <dl><code><b>qq = Queen(4, algo = "backtrack")</dl>
+   ```<dl><code><b>qq = Queen(4, algo = "backtrack")</dl>
    <dl>qq.scan_queen("q5.PNG")</b></code></dl>
+   ```
 
 <b>NQueens Solution space as Voice output </b>
-    <dl><code><b>qq = Queen(4)</b></code></dl>
+    ```<dl><code><b>qq = Queen(4)</b></code></dl>
     <dl><code><b>qq.alexa()</b></code></dl>
+    ```
 
 <b>NQueens Solution space as image output </b>
-    <dl><code><b>qq = Queen(4, algo = "backtrack")</b></code></dl>
+    ```<dl><code><b>qq = Queen(4, algo = "backtrack")</b></code></dl>
     <dl><code><b>qq.display()</b></code></dl>
+    ```
 
 <b>NQueens Solution space as PNG File output </b>
-    <dl><code><b>qq = Queen(4)</b></code></dl>
+    ```<dl><code><b>qq = Queen(4)</b></code></dl>
     <dl><code><b>qq.save()</b></code></dl>
-
+    ```
 
 
 <dl>Special Credits: https://python-packaging-tutorial.readthedocs.io/en/latest/setup_py.html </dl>
