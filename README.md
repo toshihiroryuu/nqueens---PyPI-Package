@@ -19,7 +19,8 @@ class Queen:
 ```
 
 <b>Use the below snippit to start using the package.</b>
-```from nqueens import * 
+```
+ from nqueens import * 
 ```
 
 <b>NQueens Possible Solution Space </b>
@@ -44,17 +45,17 @@ class Queen:
 
 <b>NQueens Solution space as image output </b>
    
-   ```
+  ```
     qq = Queen(4, algo = "backtrack")
     qq.display()
-    ```
+   ```
 
 <b>NQueens Solution space as PNG File output </b>
     
-    ```
+  ```
     qq = Queen(4)
     qq.save()
-    ```
+   ```
 
 
 <dl>Special Credits: https://python-packaging-tutorial.readthedocs.io/en/latest/setup_py.html </dl>
