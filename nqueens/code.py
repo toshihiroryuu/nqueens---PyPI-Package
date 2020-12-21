@@ -40,8 +40,8 @@ class Queen:
 
             print("Solution space = ", self.queen_data)
 
-            if self.count != 0:
-                print("Position of Queens = ", self.pos)
+            # if self.count != 0:
+            #     print("Position of Queens = ", self.pos)
 
         except Exception as ex:
             print(ex)
@@ -74,6 +74,10 @@ class Queen:
 
             if (rowmask == all_rows_filled):
                 self.count = self.count + 1
+                for i in range(self.n):
+                    for j in range(self.n):
+                        if board[i][j] == 1:
+                            self.pos.append([i ,j])
                 self.queen_data.append(copy.deepcopy(board))
 
             safe = all_rows_filled & (~(rowmask | ldmask | rdmask))
@@ -83,7 +87,7 @@ class Queen:
                 p = safe & (-safe)
                 col = (int)(math.log(p)/math.log(2))
                 board[row][col] = 1
-                self.pos.append([row, col])
+                # self.pos.append([row, col])
 
                 self.solve_board(board, row+1, rowmask|p, (ldmask|p) << 1, (rdmask|p) >> 1)
 
@@ -108,12 +112,12 @@ class Queen:
             for i in range(rows):
                 print("=========================================")
                 print("Solution : ", i+1)
-                fig = plt.figure()
+                fig = plt.figure(figsize=(8, 8))
                 ax = fig.add_subplot(1, 1, 1)
 
                 table = ax.table(cellText = self.queen_data[i], loc='center')
-                table.set_fontsize(14)
-                table.scale(1, 5)
+                table.set_fontsize(10)
+                table.scale(1, 2)
 
                 ax.axis('off')
                 plt.show()
@@ -138,7 +142,7 @@ class Queen:
                 ax = fig.add_subplot(1, 1, 1)
 
                 table = ax.table(cellText = self.queen_data[i], loc='center')
-                table.set_fontsize(14)
+                table.set_fontsize(10)
                 table.scale(1, 2)
 
                 ax.axis('off')
@@ -178,7 +182,7 @@ class Queen:
     def alexa(self, language = "en", speed = "fast", save = True):
 
         try:
-            tt1 = str(self.n)+"Queens Problem "
+            tt1 = str(self.n) + "Queens Problem "
             tt2 = str(self.count) + "Solutions Possible"
 
 
