@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 
 class Queen:
 
-    def __init__(self, n = 0, algo = "branch", pos = []):
-        self.n = n
+    def __init__(self, n = 0, algo = "backtrack", pos = []):
+        self.n = int(n)
         self.algo = algo
         self.pos = []
 
@@ -134,12 +134,12 @@ class Queen:
 
             for i in range(rows):
                 print("Solution : ", i+1, " - Saved as " + img_name + "_" + str(i+1) + ".png")
-                fig = plt.figure()
+                fig = plt.figure(figsize=(8, 8))
                 ax = fig.add_subplot(1, 1, 1)
 
                 table = ax.table(cellText = self.queen_data[i], loc='center')
                 table.set_fontsize(14)
-                table.scale(1, 5)
+                table.scale(1, 2)
 
                 ax.axis('off')
 
