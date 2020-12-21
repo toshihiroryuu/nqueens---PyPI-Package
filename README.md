@@ -4,7 +4,9 @@ The "N-Queens Problem" is a classical problem of chess. Here N Queens are to be 
 # Usage
 
 To Install this package. Use :
- <dl><code><b>pip install nqueens</b></code></dl>
+```
+  pip install nqueens
+  ```
 
 # Class Definition
 
