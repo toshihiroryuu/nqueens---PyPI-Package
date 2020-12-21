@@ -8,13 +8,12 @@ To Install this package. Use :
 
 # Class Definition
 
-```class Queen:
-
+```
+class Queen:
      def __init__(self, n = 0, algo = "backtrack", pos = []):
           self.n = int(n)
           self.algo = algo
           self.pos = []
-
           self.count = 0
           self.queen_data = []
 ```
