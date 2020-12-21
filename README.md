@@ -19,7 +19,8 @@ class Queen:
 ```
 
 <b>Use the below snippit to start using the package.</b>
-```from nqueens import * ```
+```from nqueens import * 
+```
 
 <b>NQueens Possible Solution Space </b>
    ```qq = Queen(5)
@@ -29,22 +30,26 @@ class Queen:
 <b>Use scan_queen() class function to solve NQueens problem with image input.</b>
 
    ![image](https://github.com/toshihiroryuu/nqueens---PyPI-Package/blob/main/tests/q4b.PNG)
-   ```qq = Queen(4, algo = "backtrack")
+   ```
+   qq = Queen(4, algo = "backtrack")
    qq.scan_queen("q5.PNG")
    ```
 
 <b>NQueens Solution space as Voice output </b>
-    ```qq = Queen(4)
+    ```
+    qq = Queen(4)
     qq.alexa()
     ```
 
 <b>NQueens Solution space as image output </b>
-    ```qq = Queen(4, algo = "backtrack")
+    ```
+    qq = Queen(4, algo = "backtrack")
     qq.display()
     ```
 
 <b>NQueens Solution space as PNG File output </b>
-    ```qq = Queen(4)
+    ```
+    qq = Queen(4)
     qq.save()
     ```
 
