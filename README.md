@@ -21,7 +21,7 @@ Import classes from the package.
     <dl><code><b>qq.pprint()</b></code></dl>
     
 3. <b>N Queens Solution when input is an image (Blank table with rows and columns as in chess board).</b>
-     <dl>![image](https://github.com/toshihiroryuu/nqueens---PyPI-Package/blob/main/tests/q4b.PNG)</dl>
+     ![image](https://github.com/toshihiroryuu/nqueens---PyPI-Package/blob/main/tests/q4b.PNG)
      <dl><code><b>qq = Queen(4, algo = "backtrack")</b></code></dl>
      <dl><code><b>qq.scan_queen("q5.PNG")</b></code></dl>
 
